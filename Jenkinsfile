@@ -12,12 +12,12 @@ pipeline {
             steps {
                 echo 'Testing..'
 		sh 'cd /var/lib/jenkins/workspace/assignment/'
-		sh 'mvn surefire-report:report -DouputFile=YourFileName.html'
+		sh 'mvn surefire-report:report -DouputFile=junitreport.html'
             }
         }
 	stage('JUnit Test') {
 	    steps {
-		publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: 'target/site/', reportFiles: '*.html', reportName: 'HTML Report', reportTitles: ''])
+		publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: 'target/site/', reportFiles: 'junitreport.html', reportName: 'HTML Report', reportTitles: ''])
             }
 	}
         stage('Deploy') {
