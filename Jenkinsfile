@@ -13,7 +13,7 @@ pipeline {
                 echo 'Testing..'
 		sh 'cd /var/lib/jenkins/workspace/assignment/'
 		sh 'mvn surefire-report:report -DouputFile=YourFileName.html'
-		publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: '/assignment/target/site', reportFiles: 'index.html', reportName: 'HTML Report', reportTitles: ''])
+		publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: 'cd var/lib/workspace/assignment/target/site/*.html', reportFiles: 'index.html', reportName: 'HTML Report', reportTitles: ''])
 
             }
         }
