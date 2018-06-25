@@ -17,7 +17,7 @@ pipeline {
         }
 	stage('JUnit Test') {
 	    steps {
-		publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: ''cd /var/lib/jenkins/workspace/assignment/target/site/*.html', reportFiles: 'index.html', reportName: 'HTML Report', reportTitles: ''])
+		publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: 'cd /var/lib/jenkins/workspace/assignment/target/site/*.html', reportFiles: 'index.html', reportName: 'HTML Report', reportTitles: ''])
             }
 	}
         stage('Deploy') {
@@ -25,4 +25,5 @@ pipeline {
                 echo 'Deploying....'
             }
         }
+    }
 }
