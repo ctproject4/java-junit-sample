@@ -12,7 +12,7 @@ pipeline {
             steps {
                 echo 'Testing..'
 		sh 'cd /var/lib/jenkins/workspace/assignment/'
-		sh 'touch *.xml'
+		sh 'mvn clean test'
 		junit 'pom.xml'
             }
         }
