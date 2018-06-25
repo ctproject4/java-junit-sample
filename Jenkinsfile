@@ -20,15 +20,25 @@ pipeline {
 		publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: 'target/site/', reportFiles: 'surefire-report.html', reportName: 'HTML Report', reportTitles: ''])
             }
 	}
+	
 	stage("build & SonarQube analysis") {
+            agent any
             steps {
               withSonarQubeEnv('My SonarQube Server') {
-                 sh 'mvn clean package sonar:sonar'
+                sh 'mvn clean package sonar:sonar'
               }
+            }
           }
-      }
-
-         stage('Deploy') {
+        
+	 stage("Quality Gate") {
+            steps {
+              timeout(time: 1, unit: 'HOURS') {
+                waitForQualityGate abortPipeline: true
+              }
+            }
+          }
+        
+	 stage('Deploy') {
             steps {
                 echo 'Deploying....'
             }
