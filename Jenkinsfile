@@ -17,7 +17,7 @@ pipeline {
         }
 	stage('JUnit Test') {
 	    steps {
-		publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: 'assignment/target/site/', reportFiles: 'index.html', reportName: 'HTML Report', reportTitles: ''])
+		publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: '/target/site/', reportFiles: 'index.html', reportName: 'HTML Report', reportTitles: ''])
             }
 	}
         stage('Deploy') {
