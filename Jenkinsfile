@@ -13,7 +13,7 @@ pipeline {
                 echo 'Testing..'
 		sh 'cd /var/lib/jenkins/workspace/assignment/'
 		sh 'touch *.xml'
-		junit '*.xml'
+		junit 'pom.xml'
             }
         }
         stage('Deploy') {
