@@ -12,7 +12,7 @@ pipeline {
             steps {
                 echo 'Testing..'
 		sh 'cd /var/lib/jenkins/workspace/assignment/'
-		sh 'mvn clean test'
+		sh 'mvn surefire-report:report -DouputFile=YourFileName.html'
             }
         }
         stage('Deploy') {
