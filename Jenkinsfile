@@ -11,7 +11,10 @@ pipeline {
         stage('Test') {
             steps {
                 echo 'Testing..'
+		sh 'cd /var/lib/jenkins/workspace/assignment/'
+		sh 'touch report.xml'
 		sh 'mvn clean test'
+		junit 'report.xml'
             }
         }
         stage('Deploy') {
