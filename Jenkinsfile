@@ -13,7 +13,6 @@ pipeline {
                 echo 'Testing..'
 		sh 'cd /var/lib/jenkins/workspace/assignment/'
 		sh 'mvn clean test'
-		junit 'pom.xml'
             }
         }
         stage('Deploy') {
