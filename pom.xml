@@ -24,6 +24,9 @@
     </properties>
 
     <dependencies>
+	dependencies {
+		classpath "org.sonarsource.scanner.gradle: sonarqube-gradle-plugin:2.5"
+		}
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
