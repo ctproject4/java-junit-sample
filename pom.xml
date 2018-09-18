@@ -9,7 +9,7 @@
     <version>0.0.1-SNAPSHOT</version>
     <packaging>jar</packaging>
 
-    <name>junitsample1</name>
+    <name>junitsample</name>
     <description>JUnit Sample</description>
 
     <parent>
