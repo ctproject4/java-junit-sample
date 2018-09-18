@@ -8,7 +8,7 @@ pipeline {
 		sh 'mvn -B -DskipTests clean package'
             }
         }
-        stage('Test') {
+        stage('Testing') {
             steps {
                 echo 'Testing..'
 		sh 'cd /var/lib/jenkins/workspace/assignment/'
