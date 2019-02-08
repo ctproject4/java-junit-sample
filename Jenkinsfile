@@ -11,7 +11,7 @@ pipeline {
         stage('Testing') {
             steps {
                 echo 'Test..'
-		sh 'cd /var/lib/jenkins/workspace/assignment/'
+		
 		sh 'mvn surefire-report:report -DouputFile=junitreport.html'
             }
         }
