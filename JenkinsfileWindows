@@ -4,6 +4,7 @@ pipeline {
 		def mvnHome
 		stage('Preparation') { // for display purposes
 		mvnHome = tool 'maven'
+		}
 	}
 
     stages {
